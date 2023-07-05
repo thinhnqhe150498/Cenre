@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import ClientHeader from "./Header";
 import { Outlet } from "react-router-dom";
 import { Box, Container } from "@mui/material";
+import ClientFooter from "./Footer";
 
 const ClientLayout = () => {
   return (
@@ -15,9 +16,8 @@ const ClientLayout = () => {
         }}
       >
         <ClientHeader />
-        <Container>
-          <Outlet />
-        </Container>
+        <Outlet />
+        <ClientFooter />
       </Box>
     </Fragment>
   );
