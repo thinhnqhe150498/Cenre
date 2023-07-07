@@ -23,7 +23,7 @@ const Feature = () => {
           <Typography variant="h3" sx={{ fontSize: 20, mb: 6 }}>
             THỜI GIAN THỰC
           </Typography>
-          <Typography component="p" sx={{ fontSize: 14, px: 2 }}>
+          <Typography sx={{ fontSize: 14, px: 2 }}>
             Chỉ số sức khỏe môi trường theo không gian và thời gian thực để cung
             cấp thông tin, cảnh báo nhanh cho cộng đồng người dân, các cơ quan
             quản lý, chính quyền.

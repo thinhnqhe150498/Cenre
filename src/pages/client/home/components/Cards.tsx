@@ -14,19 +14,19 @@ interface CardItem {
 }
 
 
+
 const Cards = (props: CardItem) => {
   return (
     <>
-      <Grid item lg={4}>
+      <Grid item lg={4} md={6}>
         {props.index === 1 || props.index === 3 || props.index === 5 ? (
           <Card
             sx={{
-              width: 270,
               textAlign: "center",
               height: "300px",
               display: "flex",
               flexDirection: "column",
-              bgcolor: "#003B72"
+              bgcolor: "#003B72",
             }}
           >
             <CardMedia sx={{ mt: 2 }}>
@@ -49,7 +49,7 @@ const Cards = (props: CardItem) => {
             >
               {props.title}
             </Typography>
-            <Typography variant="h5" component="div" color="#fff">
+            <Typography variant="h5" mx={3} color="#fff">
               {props.desc}
             </Typography>
             <Button
@@ -71,7 +71,6 @@ const Cards = (props: CardItem) => {
         ) : (
           <Card
             sx={{
-              width: 270,
               textAlign: "center",
               height: "300px",
               display: "flex",
@@ -99,7 +98,7 @@ const Cards = (props: CardItem) => {
             >
               {props.title}
             </Typography>
-            <Typography variant="h5" component="div" color="#003B72">
+            <Typography variant="h5" mx={3} color="#003B72">
               {props.desc}
             </Typography>
             <Button

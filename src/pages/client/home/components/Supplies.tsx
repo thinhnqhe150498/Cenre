@@ -4,7 +4,7 @@ import Cards from "./Cards";
 const Supplies = () => {
   
   return (
-    <Box mx='380px' mb={5}>
+    <Box mb={5}>
       <Box display="flex" justifyContent="center" mt="70px">
         <Typography
           sx={{
@@ -20,7 +20,7 @@ const Supplies = () => {
           SỨC KHOẺ MÔI TRƯỜNG CENRE CUNG CẤP
         </Typography>
       </Box>
-      <Grid container mt={5} spacing={3}>
+      <Grid container mt={5} spacing='30px'>
         {
           homeSupplies.map((item, index) => (            
             <Cards logo={item.logo} title={item.title} desc={item.desc} index={index} />

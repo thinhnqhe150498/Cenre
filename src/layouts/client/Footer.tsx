@@ -36,7 +36,7 @@ const ClientFooter = () => {
           </Box>
           <Box>
             <Typography
-              textAlign="center"
+              
               variant="h6"
               sx={textInter}
               mb={2}
@@ -44,7 +44,7 @@ const ClientFooter = () => {
               Địa chỉ: Số 23 ngõ 62 - Đường Nguyễn Chí Thanh - Phường Láng
               Thượng - Đống Đa - Hà Nội
             </Typography>
-            <Box display="flex" justifyContent="space-between" width="550px">
+            <Box display="flex" justifyContent="space-between" width="525px">
               <Typography
                 textAlign="center"
                 variant="h6"
@@ -84,7 +84,7 @@ const ClientFooter = () => {
               fontSize="12px"
               fontWeight="400"
               lineHeight="normal"
-              sx={{ textDecorationLine: "underline" }}
+              sx={{ borderBottom: '1px solid #003B72', pb:'1px' }}
             >
               ĐĂNG NHẬP
             </Typography>

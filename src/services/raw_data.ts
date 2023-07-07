@@ -3,7 +3,15 @@ import WIND from '../assets/images/wind.png';
 import RAIN_FILL from '../assets/images/rain_fill.png';
 import SUN from '../assets/images/sun.png';
 import RAIN from '../assets/images/rain.png';
-
+import CLOUD from '../assets/images/weather-page/cloud.png';
+import RAIN_WEATHER from '../assets/images/weather-page/rain.png';
+import RAIN_THUNDER from '../assets/images/weather-page/rain_thunder.png';
+import ICON_SUNNY from '../assets/images/weather-page/icon _day sunny_.png'
+import BAROMETER_ from '../assets/images/weather-page/icon _barometer_.png'
+import EYE from '../assets/images/weather-page/icon _eye_.png'
+import HUMIDITY from '../assets/images/weather-page/icon _humidity_.png'
+import RAIN_DROPS from '../assets/images/weather-page/icon _raindrops_.png'
+import SHIELD from '../assets/images/weather-page/shield.png'
 export const homeSupplies = [
     {
         logo: SUN_FILL,
@@ -34,5 +42,91 @@ export const homeSupplies = [
         logo: RAIN,
         title: 'TIN TỨC',
         desc: 'Tin tức hàng ngày, tin tức mới nhất về các vấn đề sức khoẻ môi trường và nhiều tin tức quan trọng nữa'
+    },
+]
+
+export const hourTemp = [
+    {
+        time: '01:00',
+        img: CLOUD,
+        degree: '38°'
+    },
+    {
+        time: '02:00',
+        img: RAIN_THUNDER,
+        degree: '38°'
+    },
+    {
+        time: '03:00',
+        img: RAIN_WEATHER,
+        degree: '38°'
+    },
+    {
+        time: '07:00',
+        img: RAIN_THUNDER,
+        degree: '38°'
+    },
+    {
+        time: '05:00',
+        img: CLOUD,
+        degree: '38°'
+    },
+    {
+        time: '07:00',
+        img: RAIN_THUNDER,
+        degree: '38°'
+    },
+    {
+        time: '07:00',
+        img: RAIN_THUNDER,
+        degree: '38°'
+    },
+    {
+        time: '08:00',
+        img: RAIN_THUNDER,
+        degree: '38°'
+    },
+    {
+        time: '09:00',
+        img: RAIN_THUNDER,
+        degree: '38°'
+    },
+    {
+        time: '10:00',
+        img: RAIN_THUNDER,
+        degree: '38°'
+    },
+]
+
+export const weatherContent = [
+    {
+        icon: ICON_SUNNY,
+        title: 'Chỉ số tia UV',
+        des: '11.0'
+    },
+    {
+        icon: HUMIDITY,
+        title: 'Độ ẩm không khí',
+        des: '50%'
+    },
+    {
+        icon: SHIELD,
+        title: 'Tầng Ozonn',
+        des: '????'
+    },
+    {
+        icon: BAROMETER_,
+        title: 'Áp suất không khí',
+        des: '980 mb'
+    },
+    {
+        icon: RAIN_DROPS,
+        title: 'Lắng đọng Acid',
+        des: '5.6 pH'
+    },
+    {
+        icon: EYE,
+        title: 'Tầm nhìn',
+        des: 'Trên 10 km'
     },
 ]
