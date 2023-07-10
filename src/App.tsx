@@ -19,7 +19,7 @@ function App() {
       const currentDate = new Date();
       const currentHour = currentDate.getHours();
 
-      if (currentHour >= 0 && currentHour < 18) {
+      if (currentHour >= 6 && currentHour < 18) {
         setTheme(LightTheme);
       } else {
         setTheme(darkTheme);

@@ -4,14 +4,16 @@ import Feature from "./components/Feature";
 import Introduce from "./components/Introduce";
 import Supplies from "./components/Supplies";
 import BG_BODY from "../../../assets/images/bg-body.png";
-
+import useBackGround from "../../../hooks/useBackGround";
+import BG_BODY_DARK from '../../../assets/images/bg-dark.jpg' 
 const ClientIntro = () => {
+  const isLight = useBackGround()
   return (
     <>
       <Hero />
       <Box
         sx={{
-          backgroundImage: `url(${BG_BODY})`,
+          backgroundImage: isLight? `url(${BG_BODY})`: `url(${BG_BODY_DARK})`,
           width: "100%",
           backgroundPosition: "center",
         }}

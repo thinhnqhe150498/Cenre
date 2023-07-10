@@ -5,6 +5,7 @@ import {
   Typography,
   CardMedia,
   Card,
+  useTheme,
 } from "@mui/material";
 interface CardItem {
   logo: string;
@@ -16,6 +17,7 @@ interface CardItem {
 
 
 const Cards = (props: CardItem) => {
+  const theme = useTheme()
   return (
     <>
       <Grid item lg={4} md={6}>
@@ -23,7 +25,7 @@ const Cards = (props: CardItem) => {
           <Card
             sx={{
               textAlign: "center",
-              height: "300px",
+              height: "350px",
               display: "flex",
               flexDirection: "column",
               bgcolor: "#003B72",
@@ -62,7 +64,7 @@ const Cards = (props: CardItem) => {
               }}
             >
               <Typography
-                sx={{ fontSize: 14, fontWeight: 700, px: 2, color: "#003B72" }}
+                sx={{ fontSize: 14, fontWeight: 700, px: 2, color: theme.palette.secondary.main }}
               >
                 Chi tiết
               </Typography>
@@ -72,9 +74,10 @@ const Cards = (props: CardItem) => {
           <Card
             sx={{
               textAlign: "center",
-              height: "300px",
+              height: "350px",
               display: "flex",
               flexDirection: "column",
+              bgcolor: theme.status.danger,
             }}
           >
             <CardMedia sx={{ mt: 2 }}>
@@ -83,7 +86,7 @@ const Cards = (props: CardItem) => {
                 alt=""
                 height="60px"
                 width="60px"
-                style={{ color: "#003B72" }}
+                style={{ color: theme.palette.primary.main }}
               />
             </CardMedia>
             <Typography
@@ -92,13 +95,13 @@ const Cards = (props: CardItem) => {
                 fontSize: 20,
                 fontWeight: 800,
                 lineHeight: "normal",
-                color: "#003B72",
+                color: theme.palette.primary.main,
               }}
               mb={3}
             >
               {props.title}
             </Typography>
-            <Typography variant="h5" mx={3} color="#003B72">
+            <Typography variant="h5" mx={3} sx={{color:theme.palette.primary.main}}>
               {props.desc}
             </Typography>
             <Button
@@ -107,7 +110,7 @@ const Cards = (props: CardItem) => {
                 borderRadius: "20px",
                 margin: "auto auto 0",
                 transform: "translateY(-8px)",
-                bgcolor: "#003B72",
+                bgcolor: theme.palette.secondary.main,
               }}
             >
               <Typography

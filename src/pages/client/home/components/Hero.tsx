@@ -9,6 +9,8 @@ const Hero = () => {
       sx={{
         backgroundImage: `url(${HERO})`,
         position: "relative",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
       }}
     >
       <Box

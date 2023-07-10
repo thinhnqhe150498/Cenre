@@ -118,7 +118,6 @@ const textInter = {
   color : "#003B72",
   fontSize : "12px",
   fontWeight : "400",
-  fontFamily : "Inter",
   lineHeight : "normal",
 };
 

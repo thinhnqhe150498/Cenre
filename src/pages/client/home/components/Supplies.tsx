@@ -1,8 +1,8 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useTheme } from "@mui/material";
 import { homeSupplies } from '../../../../services/raw_data';
 import Cards from "./Cards";
 const Supplies = () => {
-  
+  const theme = useTheme();
   return (
     <Box mb={5}>
       <Box display="flex" justifyContent="center" mt="70px">
@@ -13,7 +13,7 @@ const Supplies = () => {
             lineHeight: "normal",
             width: "500px",
             textAlign: "center",
-            color: "#003B72",
+            color: theme.palette.primary.main,
           }}
           variant="h1"
         >
