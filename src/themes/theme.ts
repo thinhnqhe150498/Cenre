@@ -1,5 +1,6 @@
 import { PaletteMode } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
+import type {} from '@mui/lab/themeAugmentation';
 
 declare module "@mui/material/styles" {
   interface Theme {
@@ -28,7 +29,7 @@ export const LightTheme = createTheme({
     allVariants: {
       fontFamily: `'Inter', sans-serif;`,
       textTransform: "none",
-      fontSize: 18,
+      fontSize: 15,
       fontWeight: 700,
       lineHeight: 1.2,
     },
@@ -56,6 +57,13 @@ export const LightTheme = createTheme({
         },
       },
     },
+    MuiTabPanel: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+        },
+      },
+    }
   },
 });
 
@@ -64,7 +72,7 @@ export const darkTheme = createTheme({
     allVariants: {
       fontFamily: `'Inter', sans-serif;`,
       textTransform: "none",
-      fontSize: 18,
+      fontSize: 15,
       fontWeight: 700,
       lineHeight: 1.2,
     },
@@ -92,5 +100,12 @@ export const darkTheme = createTheme({
         },
       },
     },
+    MuiTabPanel: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+        },
+      },
+    }
   },
 });

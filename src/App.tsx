@@ -11,6 +11,11 @@ import { ThemeProvider } from "@mui/material";
 import { useEffect, useState } from "react";
 import { LightTheme, darkTheme } from "./themes/theme";
 import './App.css'
+import ClientHealthAndActivity from "./pages/client/health-and-activity";
+import Login from "./pages/auth/login";
+import Register from "./pages/auth/register";
+import AdminLayout from "./layouts/admin";
+import { ProSidebarProvider  } from "react-pro-sidebar";
 function App() {
   const [theme, setTheme] = useState(darkTheme);
 
@@ -41,18 +46,25 @@ function App() {
     <>
       <RootProvider>
         <ThemeProvider theme={theme}>
+          <ProSidebarProvider>
           <BrowserRouter>
             <Routes>
               <Route path="*" element={<>Chua co trang nay</>} />
               <Route path="/client" element={<ClientLayout />}>
                 <Route index={true} path="intro" element={<ClientIntro />} />
                 <Route path="contact" element={<ClientContact />} />
+                <Route path="health" element={<ClientHealthAndActivity />} />
                 <Route path="home" element={<ClientHomePage />} />
                 <Route path="weather" element={<ClientWeather />} />
               </Route>
-              <Route path="admin" element={<AdminHome />} />
+              <Route path="/admin" element={<AdminLayout />}>
+              <Route index={true} element={<AdminHome />} />
+              </Route>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
             </Routes>
           </BrowserRouter>
+          </ProSidebarProvider>
         </ThemeProvider>
       </RootProvider>
     </>
