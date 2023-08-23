@@ -1,32 +1,16 @@
 import React from "react";
 import { Box, Stack } from "@mui/material";
-import RightCard from "./RightCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
+import PredictWeather from "./PredictWeather";
+import HourTemp from "./HourTemp";
+import News from "./News";
+
 const RightSide = () => {
   return (
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={4}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperSlide>
-          <RightCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <RightCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <RightCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <RightCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <RightCard />
-        </SwiperSlide>
-      </Swiper>
+      <Stack direction='column' width="calc(100% - 225px)" mb={3}>
+        <PredictWeather />
+        <HourTemp />
+        <News />
+      </Stack>
   );
 };
 

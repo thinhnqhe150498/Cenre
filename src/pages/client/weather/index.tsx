@@ -1,26 +1,31 @@
-import React from "react";
 import { Box } from "@mui/material";
+import BG_BODY from '../../../assets/images/bg-body.png'
+import Intro from "./components/Intro";
 import LeftSide from "./components/LeftSide";
 import RightSide from "./components/RightSide";
-import Intro from "./components/Intro";
-
-const ClientHomePage = () => {
+import MAP from './../../../assets/images/map.png'
+const ClientHome = () => {
   return (
     <>
-      <Box width="100%">
-        <Intro />
-      </Box>
       <Box
-        display="flex"
-        px="45px"
-        gap="35px"
-        width="100%"
+        sx={{
+          backgroundImage: `url(${BG_BODY})`,
+          width: "100%",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
       >
-          <LeftSide />
-          <RightSide />
+        <Box sx={{maxWidth: '1800px', m: '0 auto', padding: '0 20px',}}>
+          <Intro />
+          <Box display="flex" gap="35px">
+            <LeftSide />
+            <RightSide />
+          </Box>
+          <img src={MAP} width='100%' style={{marginBottom: '30px'}} />
+        </Box>
       </Box>
     </>
   );
 };
 
-export default ClientHomePage;
+export default ClientHome;

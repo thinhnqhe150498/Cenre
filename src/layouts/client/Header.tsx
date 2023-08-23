@@ -172,9 +172,19 @@ const ClientHeader = () => {
           <Link to="/c" style={{ textDecoration: "none" }}>
             <Typography sx={typoSX}>CHỈ SỐ MÔI TRƯỜNG</Typography>
           </Link>
-          <Link to="/d" style={{ textDecoration: "none" }}>
-            <Typography sx={typoSX}>DỰ BÁO KHÍ HẬU</Typography>
-          </Link>
+          <NavLink
+            to="/client/predict-weather"
+            style={({ isActive }) => {
+              return {
+                textDecoration: isActive ? "" : "none",
+                textUnderlineOffset: isActive ? "5px" : "0",
+              };
+            }}
+          >
+            {({ isActive }) => (
+              <Typography sx={typoSX(isActive)}>DỰ BÁO KHÍ HẬU</Typography>
+            )}
+          </NavLink>
           <NavLink
             to="/client/health"
             style={({ isActive }) => {
@@ -194,9 +204,19 @@ const ClientHeader = () => {
           <Link to="/g" style={{ textDecoration: "none" }}>
             <Typography sx={typoSX}>TIN TỨC</Typography>
           </Link>
-          <Link to="/h" style={{ textDecoration: "none" }}>
-            <Typography sx={typoLast}>LIÊN HỆ</Typography>
-          </Link>
+          <NavLink
+            to="/client/contact"
+            style={({ isActive }) => {
+              return {
+                textDecoration: isActive ? "" : "none",
+                textUnderlineOffset: isActive ? "5px" : "0",
+              };
+            }}
+          >
+            {({ isActive }) => (
+              <Typography sx={typoSX(isActive)}>LIÊN HỆ</Typography>
+            )}
+          </NavLink>
         </Box>
         <Button variant="contained" size="small">
           Bà Rịa – Vũng Tàu

@@ -1,29 +1,41 @@
-import React from 'react'
-import { Typography, Card, CardContent, Button, CardActions } from '@mui/material';
-const RightCard = () => {
-  return (
-    <Card sx={{ width: 320, mt: 4, height: 150 }}>
-    <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Word of the Day
-      </Typography>
-      <Typography variant="h5" component="div">
-        benevolent
-      </Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        adjective
-      </Typography>
-      <Typography variant="body2">
-        well meaning and kindly.
-        <br />
-        {'"a benevolent smile"'}
-      </Typography>
-    </CardContent>
-    <CardActions>
-      <Button size="small">Learn More</Button>
-    </CardActions>
-  </Card>
-  )
+import React from 'react';
+import { Typography, Card, CardContent,Box,useTheme } from '@mui/material';
+
+
+interface IRightCard {
+  title: string;
+  num: string;
+  type: string;
+  logo: string;
+  index: number;
 }
 
-export default RightCard
+const RightCard = (props: IRightCard) => {
+  const theme = useTheme()
+  return (
+    <Card sx={{ mt: 2,borderRadius: '20px',backgroundColor:"rgba(255, 255, 255, 0.7)"}}>
+      <CardContent sx={{ display: 'flex',alignItems:'center',mx:'10px',justifyContent:'space-between' }}>
+       <Box >
+       <Typography sx={{  color: theme.palette.secondary.main, fontWeight: 'bold'}}>
+          {props.title}
+        </Typography>
+        <Typography color={theme.palette.secondary.main}>
+          {props.type}
+        </Typography>
+       </Box>
+      <Box sx={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+          <img 
+            src={`${props.logo}`}
+            height="30px"
+            width="30px"
+          />
+        <Typography sx={{fontSize:"12px", color: theme.palette.secondary.main, fontWeight: 'bold', mt: '5px' }}>
+          {props.num}
+        </Typography>
+      </Box>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default RightCard;

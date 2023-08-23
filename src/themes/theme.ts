@@ -106,6 +106,6 @@ export const darkTheme = createTheme({
           padding: "0",
         },
       },
-    }
+    },
   },
 });

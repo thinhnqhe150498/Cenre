@@ -1,29 +1,52 @@
-import React from 'react'
-import { Typography, Card, CardContent, Button, CardActions } from '@mui/material';
-const LeftCard = () => {
-  return (
-    <Card sx={{ width: 150, mt: 4, height: 150 }}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="div">
-          benevolent
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-  )
+import React from 'react';
+import { Typography, Card, CardContent ,Grid} from '@mui/material';
+
+interface ILeftCard {
+  title: string;
+  num: string;
+  sugest: string;
+  avg: string;
+  index:number;
 }
 
-export default LeftCard
+const LeftCard = (props: ILeftCard) => {
+  return (
+    <>
+      <Grid item lg={2}>
+        {props.index === 1 || props.index === 3 || props.index === 5 ? (
+          <Card  sx={{ bgcolor: "#1D609D", width: 120, mt: 2, height: 120, textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center',
+          border: '1px solid #ccc', borderRadius: 4 }}>
+            <CardContent>
+              <Typography sx={{ fontSize: 6.8,color: "white" }} color="text.secondary" gutterBottom>
+                {props.title}
+              </Typography>
+              <Typography sx={{ fontSize: 20,color: "white" }} variant="h5" component="div">
+                {props.num}
+              </Typography>
+              <Typography sx={{ fontSize: 6.8,color: "white"}} color="text.secondary">
+                {props.sugest}
+              </Typography>
+              <Typography sx={{ mt:3,color: "white"}} variant="body2">{props.avg}</Typography>
+            </CardContent>
+          </Card>
+        ) : (<Card  sx={{bgcolor: "#fff", width: 120, mt: 2, height: 120, textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        border: '1px solid #ccc', borderRadius: 4 }}>
+          <CardContent>
+            <Typography sx={{ color: "#003B72", fontSize: 6.8 }} color="text.secondary" gutterBottom>
+              {props.title}
+            </Typography>
+            <Typography sx={{ color: "#003B72",fontSize: 20 }} variant="h5" component="div">
+              {props.num}
+            </Typography>
+            <Typography sx={{ color: "#003B72",fontSize: 6.8}} color="text.secondary">
+              {props.sugest}
+            </Typography>
+            <Typography sx={{ color: "#003B72",mt:1}} variant="body2">{props.avg}</Typography>
+          </CardContent>
+        </Card>) }
+      </Grid>
+    </>
+  );
+};
+
+export default LeftCard; 

@@ -1,8 +1,7 @@
-import React from "react";
 import { Box, Grid, Typography, useTheme } from "@mui/material";
 import RAIN from "../../../../assets/images/weather-page/icon _rain mix_.png";
-import { weatherContent } from "../../../../services/raw_data";
 import useBackGround from "../../../../hooks/useBackGround";
+import { weatherContent } from "../../../../services/raw_data";
 export const Content = () => {
   const theme = useTheme();
   const isLight = useBackGround();

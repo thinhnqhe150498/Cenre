@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import { Box, Typography, useTheme } from "@mui/material";
-import ReactApexChart from "react-apexcharts";
+import { Box, useTheme } from "@mui/material";
+import { ApexOptions } from "apexcharts";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LinearScale,
   Title,
   Tooltip,
-  Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
-import { ApexOptions } from "apexcharts";
+import React from "react";
+import ReactApexChart from "react-apexcharts";
 
 ChartJS.register(
   CategoryScale,
@@ -22,10 +21,10 @@ ChartJS.register(
   Legend
 );
 
-import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
+import Tab from "@mui/material/Tab";
 
 // export const options = {
 //   responsive: true,
@@ -61,11 +60,8 @@ import TabPanel from "@mui/lab/TabPanel";
 // };
 
 const RainChart = () => {
-  const [activeChart, setActiveChart] = useState("luongMua");
   const theme = useTheme();
-  const handleChartClick = (chart: string) => {
-    setActiveChart(chart);
-  };
+
 
   // const renderChart = () => {
   //   if (activeChart === "luongMua") {

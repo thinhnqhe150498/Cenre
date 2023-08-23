@@ -1,22 +1,33 @@
-import React from 'react'
-import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import React from "react";
+import { Box, CardMedia, Typography, Card } from "@mui/material";
+import Video from "../intro2.mp4"
+
 const Intro = () => {
   return (
-    <Box mt={2}
-  >
-    <Card sx={{ width: '100%'}}>
-      <CardMedia 
+    <Box
+      sx={{
+        bgcolor: "#fff",
+        height: "85vh",
+        minHeight: "300px",
+        mt: 5,
+      }}
+    >
+      <Card sx={{height: '100%'}}>
+        <CardMedia
           component="video"
+          src={Video}
           autoPlay
           loop
-          src="https://www.youtube.com/watch?v=Spy-hQTCE5Y"
-          controls
-          height='900'
-      >
-      </CardMedia>
-    </Card>
-  </Box>
-  )
-}
+          muted
+          sx={{height: '100%',objectFit:'cover',
+          top: 0,
+          left: 0,
+          width: "100%",
+         }}
+        />
+      </Card>
+    </Box>
+  );
+};
 
-export default Intro
+export default Intro;

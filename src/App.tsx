@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { RootProvider } from "./contexts/RootContext";
-import ClientHome from "./pages/client/home";
+
 import AdminHome from "./pages/admin/home";
 import ClientLayout from "./layouts/client";
 import ClientContact from "./pages/client/contact";
-import ClientHomePage from "./pages/client/weather";
+
 import ClientIntro from "./pages/client/home";
 import ClientWeather from "./pages/client/weather-page";
 import { ThemeProvider } from "@mui/material";
@@ -16,6 +16,8 @@ import Login from "./pages/auth/login";
 import Register from "./pages/auth/register";
 import AdminLayout from "./layouts/admin";
 import { ProSidebarProvider  } from "react-pro-sidebar";
+import { ClientPredictWeather } from "./pages/client/predict-weather";
+import ClientHome from "./pages/client/weather";
 function App() {
   const [theme, setTheme] = useState(darkTheme);
 
@@ -50,12 +52,14 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="*" element={<>Chua co trang nay</>} />
+              <Route path="/" element={<Navigate to='client/weather' />} />
               <Route path="/client" element={<ClientLayout />}>
                 <Route index={true} path="intro" element={<ClientIntro />} />
                 <Route path="contact" element={<ClientContact />} />
                 <Route path="health" element={<ClientHealthAndActivity />} />
-                <Route path="home" element={<ClientHomePage />} />
+                <Route path="home" element={<ClientHome />} />
                 <Route path="weather" element={<ClientWeather />} />
+                <Route path="predict-weather" element={<ClientPredictWeather />} />
               </Route>
               <Route path="/admin" element={<AdminLayout />}>
               <Route index={true} element={<AdminHome />} />

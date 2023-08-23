@@ -7,10 +7,7 @@ const Introduce = () => {
       <Box display="flex">
         <Box sx={{ flex: 1 }} bgcolor="#fff" mt="-30px">
           <Container maxWidth="sm">
-            <Stack
-              direction="column"  
-              alignItems='flex-start'
-            >
+            <Stack direction="column" alignItems="flex-start">
               <Box display="flex" justifyContent="center" mt="70px">
                 <Typography
                   sx={{ fontSize: 20, fontWeight: 800, lineHeight: "normal" }}
@@ -57,12 +54,14 @@ const Introduce = () => {
                   tượng Thủy Văn& Biến đổi khí hậu.
                 </Typography>
               </Box>
-            <Button
-              variant="contained"
-              sx={{ mt: 6, borderRadius: "20px", color: "#003B72" }}
-            >
-              Xem thêm về chúng tôi
-            </Button>
+              <Box display='flex' justifyContent='center' width='100%'>
+                <Button
+                  variant="contained"
+                  sx={{ mt: 6, borderRadius: "20px", color: "#003B72" }}
+                >
+                  Xem thêm về chúng tôi
+                </Button>
+              </Box>
             </Stack>
           </Container>
         </Box>
